@@ -1,0 +1,4 @@
+ion-header ion-toolbar{
+    --background:   var(--ion-color-primary);   /*refer to variable.css */
+    --color: var(--ion-color-primary-contrast);
+}

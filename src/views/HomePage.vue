@@ -1,56 +1,53 @@
 <template>
   <ion-page>
-    <ion-header :translucent="true">
+    <ion-header>
       <ion-toolbar>
-        <ion-title>Blank</ion-title>
+        <ion-title><h3>This a header title</h3></ion-title>
       </ion-toolbar>
     </ion-header>
 
-    <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">Blank</ion-title>
-        </ion-toolbar>
-      </ion-header>
-
-      <div id="container">
-        <strong>Ready to create an app?</strong>
-        <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-      </div>
+    <ion-content>
+      <ion-toolbar>
+        <ion-list>
+          <ion-item router-link="/newpage"
+            >This is a list item linked to another page
+          </ion-item>
+          <ion-item>This is another list item</ion-item>
+        </ion-list>
+        <ion-img
+          :src="'https://cdn.pixabay.com/photo/2016/07/29/14/33/ballet-1553359__340.jpg'"
+        ></ion-img>
+      </ion-toolbar>
     </ion-content>
   </ion-page>
 </template>
 
-<script setup lang="ts">
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+<script lang="ts">
+import {
+  IonHeader,
+  IonContent,
+  IonTitle,
+  IonToolbar,
+  IonPage,
+  IonImg,
+  IonList,
+  IonItem,
+} from "@ionic/vue";
+import { defineComponent } from "vue";
+
+export default defineComponent({
+  name: "HomePage",
+  props: [],
+  components: {
+    IonPage,
+    IonContent,
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonImg,
+    IonList,
+    IonItem,
+  },
+});
 </script>
 
-<style scoped>
-#container {
-  text-align: center;
-  
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-  
-  color: #8c8c8c;
-  
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-}
-</style>
